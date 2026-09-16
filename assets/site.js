@@ -13,7 +13,7 @@
         timer = setTimeout(type, delay);
     }
     function motion() {
-        clearTimeout(timer); if (reduced) document.getAnimations().forEach(a => a.cancel()); root.classList.toggle('reduced-motion', reduced); $('.motion').setAttribute('aria-pressed', String(reduced)); $('.motion').setAttribute('aria-label', reduced ? 'Enable motion' : 'Reduce motion'); $('.motion span').textContent = reduced ? 'off' : 'on';
+        clearTimeout(timer); if (reduced) document.getAnimations().forEach(a => a.cancel()); root.classList.toggle('reduced-motion', reduced); const motionToggle = $('.motion'); if (motionToggle) { motionToggle.setAttribute('aria-pressed', String(reduced)); motionToggle.setAttribute('aria-label', reduced ? 'Enable motion' : 'Reduce motion'); motionToggle.querySelector('span')?.replaceChildren(reduced ? 'off' : 'on'); }
         word = 0; letter = roles[0].length; erasing = true; $('#typed-role').textContent = roles[0]; if (!reduced) timer = setTimeout(type, 2500);
     }
     // $('.motion').addEventListener('click', () => { reduced = !reduced; setting = reduced ? 'off' : 'on'; try { localStorage.setItem('jitha-gold-motion', setting); } catch (_) { } motion(); schedule(); });
@@ -30,10 +30,14 @@
     if ('IntersectionObserver' in window) {
         const observer = new IntersectionObserver(entries => entries.forEach(e => { if (e.isIntersecting) { if (!reduced && e.target.animate) e.target.animate([{ opacity: 0, transform: 'translateY(25px)' }, { opacity: 1, transform: 'translateY(0)' }], { duration: 650, easing: 'cubic-bezier(.2,.65,.3,1)' }); observer.unobserve(e.target); } }), { threshold: .1 }); $$('.reveal').forEach(el => observer.observe(el));
     }
-    const dialog = $('#project-dialog');
-    $$('[data-case]').forEach(b => b.addEventListener('click', () => { const p = portfolioData.projects[b.dataset.case]; $('#dialog-category').textContent = p.category; $('#dialog-title').textContent = p.title; $('#dialog-intro').textContent = p.intro; $('#dialog-status').textContent = p.status; $('#dialog-link').href = p.link; $('#dialog-link').textContent = p.linkLabel; $('#dialog-points').replaceChildren(...p.points.map(text => { const li = document.createElement('li'); li.textContent = text; return li; })); dialog.showModal(); }));
-    $('.close-dialog').addEventListener('click', () => dialog.close()); dialog.addEventListener('click', e => { const r = dialog.getBoundingClientRect(); if (e.target === dialog && (e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom)) dialog.close(); });
+    $$('[data-case]').forEach(b => b.addEventListener('click', event => {
+        event.preventDefault();
+        const project = portfolioData.projects[b.dataset.case];
+        if (project?.link) window.location.assign(project.link);
+    }));
     // Keep native disclosures usable without scripts; only one career entry expands at a time.
     $$('.career').forEach(d => d.addEventListener('toggle', () => { if (d.open) $$('.career').forEach(other => { if (other !== d) other.open = false; }); }));
     motion(); draw();
 })();
+
+

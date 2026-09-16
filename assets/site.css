@@ -100,7 +100,7 @@ summary:focus-visible {
 }
 
 .section {
-    padding: 110px max(7vw, 25px)
+    padding: 90px max(7vw, 25px)
 }
 
 .eyebrow {
@@ -323,7 +323,8 @@ nav a.active {
 
 .button:hover {
     box-shadow: 0 0 30px #ddc37444;
-    transform: translateY(-2px)
+    transform: translateY(-2px);
+    background: #d4af37
 }
 
 .text-link {
@@ -519,7 +520,7 @@ nav a.active {
 
 .section-heading>p:not(.eyebrow) {
     font-size: 16px;
-    max-width: 520px;
+    max-width: 880px;
     margin: 0 auto
 }
 
@@ -604,7 +605,7 @@ summary::-webkit-details-marker {
     background: var(--surface);
     display: grid;
     grid-template-columns: .85fr 1.3fr;
-    gap: 9%
+    gap: 5.5%
 }
 
 .experience-heading {
@@ -620,7 +621,7 @@ summary::-webkit-details-marker {
 
 .experience-heading>p:not(.eyebrow) {
     font-size: 16px;
-    max-width: 360px
+    max-width: 800px
 }
 
 .career {
@@ -995,7 +996,7 @@ summary::-webkit-details-marker {
     display: inline-flex;
     gap: 30px;
     align-items: center;
-    font-size: clamp(18px, 2.4vw, 32px);
+    font-size: clamp(18px, 2.4vw, 25px);
     letter-spacing: -.03em;
     border-bottom: 1px solid #ddc37470;
     padding-bottom: 8px;
@@ -1038,62 +1039,126 @@ footer>a {
 }
 
 dialog {
-    border: 1px solid #66645b;
-    border-radius: 12px;
-    background: #1e1e1b;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 101;
+    transform: translate(-50%, -50%);
+    margin: 0;
+    display: none;
+    border: 1px solid #ffffff26;
+    border-radius: 34px 12px 34px 12px;
+    background:
+        linear-gradient(135deg, #ffffff12, transparent 38%),
+        linear-gradient(145deg, #292b25f2, #171916f5);
     color: var(--text);
-    padding: 45px;
-    width: min(800px, 92vw);
-    max-height: 85svh;
+    padding: clamp(30px, 5vw, 58px) clamp(26px, 5vw, 58px) clamp(26px, 4vw, 42px);
+    width: min(920px, 92vw);
+    max-height: 88svh;
+    max-width: calc(100vw - 32px);
     overflow: auto;
-    box-shadow: 0 30px 100px #0008
+    box-shadow: 0 35px 100px #000b, 0 10px 30px #0006, inset 0 1px #ffffff2b;
+    backdrop-filter: blur(24px) saturate(1.12);
+    -webkit-backdrop-filter: blur(24px) saturate(1.12);
+}
+
+dialog::before {
+    content: "";
+    position: absolute;
+    top: -80px;
+    right: -55px;
+    width: 180px;
+    height: 180px;
+    border: 1px solid #ffffff18;
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+dialog[open] {
+    display: block;
 }
 
 dialog::backdrop {
-    background: #0f0d04bb;
-    backdrop-filter: blur(8px)
+    background: #080a08c7;
+    backdrop-filter: blur(12px) saturate(.8)
 }
 
 .close-dialog {
-    display: block;
-    margin-left: auto;
-    font-size: 13px;
-    color: #bfbdb4
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: grid;
+    place-items: center;
+    width: 36px;
+    height: 36px;
+    border: 1px solid #ffffff26;
+    border-radius: 50%;
+    background: #ffffff0a;
+    color: #bfbdb4;
+    font-size: 0;
+    transition: transform .25s ease, background-color .25s ease, color .25s ease
 }
 
-dialog>.eyebrow {
-    margin-top: 30px;
+.close-dialog::before {
+    content: "×";
+    font-size: 22px;
+    line-height: 1;
+}
+
+.close-dialog:hover {
+    transform: rotate(90deg);
+    background: #ddc37422;
     color: var(--accent)
 }
 
+dialog>.eyebrow {
+    margin: 0 48px 14px 0;
+    color: var(--accent);
+    font-size: 10px;
+    letter-spacing: .16em
+}
+
 dialog h2 {
-    font-size: 39px;
-    margin: 18px 0 25px
+    max-width: 18ch;
+    font-size: clamp(28px, 4vw, 46px);
+    line-height: 1.08;
+    margin: 0 0 18px
 }
 
 #dialog-intro {
-    font-size: 17px;
-    line-height: 1.8
+    max-width: 60ch;
+    color: #d3d1c8;
+    font-size: 15px;
+    line-height: 1.65
 }
 
 .dialog-columns {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 35px;
-    border-top: 1px solid #4b4940;
-    padding-top: 28px;
-    margin: 30px 0
+    gap: 18px;
+    margin: 34px 0 28px
+}
+
+.dialog-columns>div {
+    min-width: 0;
+    padding: 22px;
+    border: 1px solid #ffffff18;
+    border-radius: 16px;
+    background: #ffffff08;
+    box-shadow: inset 0 1px #ffffff18;
 }
 
 .dialog-columns h3 {
-    font-size: 18px;
-    margin-bottom: 15px
+    margin-bottom: 14px;
+    color: #f3f0e7;
+    font-size: 15px;
+    letter-spacing: .01em
 }
 
 .dialog-columns p,
 .dialog-columns ul {
-    font-size: 14px;
-    line-height: 1.9;
+    font-size: 13px;
+    line-height: 1.75;
     color: #bbb9ae
 }
 
@@ -1102,7 +1167,31 @@ dialog h2 {
 }
 
 .dialog-columns li {
-    margin-bottom: 10px
+    margin-bottom: 9px
+}
+
+.dialog-status {
+    max-width: 60ch;
+    margin: 26px 0 24px;
+    padding: 14px 16px;
+    border: 1px solid #ffffff18;
+    border-radius: 18px 7px 18px 7px;
+    background: #ffffff08;
+    box-shadow: inset 0 1px #ffffff16;
+    color: #c2c1b8;
+    font-size: 12px;
+    letter-spacing: .02em;
+}
+
+#dialog-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    border: 1px solid #ddc37466;
+    border-radius: 999px;
+    padding: 11px 17px;
+    background: #ddc37416;
+    color: var(--accent);
 }
 
 .no-script {
@@ -1131,7 +1220,7 @@ dialog h2 {
 
 @media(max-width:1100px) {
     .section {
-        padding: 85px 5vw
+        padding: 65px 5vw
     }
 
     .header {
@@ -1508,12 +1597,14 @@ dialog h2 {
     }
 
     dialog {
-        padding: 28px
+        padding: 30px 20px 22px;
+        border-radius: 24px 10px 24px 10px
     }
 
     .dialog-columns {
         grid-template-columns: 1fr;
-        gap: 25px
+        gap: 12px;
+        margin: 26px 0 22px
     }
 
     dialog h2 {
@@ -1856,7 +1947,7 @@ h3 {
 .intro {
     font-size: 16px;
     line-height: 1.9;
-    max-width: 460px
+    max-width: 570px
 }
 
 .header {
@@ -1870,12 +1961,13 @@ h3 {
 
 .eyebrow {
     color: #c0b591;
-    font-size: 10px;
-    letter-spacing: .12em
+    font-size: 15px;
+    letter-spacing: .18em;
+    line-height: 65px;
 }
 
 .section-heading {
-    margin-bottom: 55px
+    margin-bottom: 42px
 }
 
 .section-heading>p:not(.eyebrow) {
@@ -1888,7 +1980,7 @@ h3 {
 }
 
 .expertise-card h3 {
-    font-size: 24px;
+    font-size: 20px;
     line-height: 1.25;
     margin-bottom: 22px
 }
@@ -2047,5 +2139,533 @@ h3 {
 
     .header {
         display: none
+    }
+}
+
+.brand {
+    display: inline-flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.brand-logo {
+    display: block;
+    width: 110px;
+    height: auto;
+}
+
+@media (max-width: 780px) {
+    .brand-logo {
+        width: 90px;
+    }
+}
+
+.project-art.calibration-art {
+    padding: 0;
+}
+
+.calibration-art>img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-position: top;
+}
+
+
+/* Offset project stack */
+#work .jrr-coverflow {
+    --project-gold: #ddc374;
+    max-width: 1120px;
+    margin: 44px auto 0;
+}
+
+#work .jrr-stage {
+    display: grid;
+    gap: 28px;
+}
+
+#work .jrr-stage>.project-card {
+    display: grid;
+    grid-template-columns: 1fr;
+    min-width: 0;
+    min-height: 0;
+    margin: 0;
+    border: 1px solid #ffffff1c;
+    border-radius: 16px;
+    overflow: hidden;
+    background: #ffffff08;
+    box-shadow: 0 28px 65px #0008, 0 8px 20px #0005, inset 0 1px #ffffff26;
+    backdrop-filter: blur(10px) saturate(1.08);
+    -webkit-backdrop-filter: blur(10px) saturate(1.08);
+}
+
+/* Screenshot and description sit beside each other. */
+#work .jrr-stage .project-art {
+    position: relative;
+    padding: 0;
+    min-height: 0;
+    height: auto;
+    min-height: 0;
+    aspect-ratio: 3 / 2;
+    overflow: hidden;
+    background: #161714;
+}
+
+#work .jrr-stage .project-art::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: linear-gradient(180deg, transparent 45%, #11130fcc 100%);
+    opacity: .45;
+}
+
+#work .jrr-stage .project-art>img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+    object-fit: contain;
+    object-position: center;
+    transform: scale(1.015);
+    transition: transform .7s cubic-bezier(.22, .72, .18, 1), filter .5s ease;
+}
+
+#work .jrr-stage .project-art:hover>img,
+#work .jrr-stage .project-art:focus-within>img {
+    transform: scale(1.07);
+    filter: saturate(1.08) contrast(1.04);
+}
+
+@media (max-width: 900px) and (min-width: 701px) {
+    #work .jrr-ready .jrr-stage {
+        overflow: hidden;
+    }
+
+    #work .jrr-ready .jrr-stage>.project-card {
+        width: min(560px, calc(100% - 48px));
+    }
+
+    #work .jrr-ready .project-card[data-position="1"] {
+        transform: translate3d(calc(-50% + 110px), -26px, -40px) rotateZ(3deg) scale(.95);
+    }
+
+    #work .jrr-ready .project-card[data-position="-1"] {
+        transform: translate3d(calc(-50% - 110px), -42px, -80px) rotateZ(-5deg) scale(.9);
+    }
+}
+
+#work .jrr-stage .project-caption {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 18px;
+    min-width: 0;
+    min-height: 108px;
+    padding: 16px 22px;
+    background:
+        linear-gradient(145deg, #ffffff0e, transparent 42%),
+        linear-gradient(135deg, #2d2e28cc, #1d1f1dcc);
+    border: 1px solid #ffffff18;
+    border-left: 0;
+    box-shadow: inset 18px 0 35px #ffffff06, inset 0 1px #ffffff12;
+    backdrop-filter: blur(18px) saturate(1.08);
+    -webkit-backdrop-filter: blur(18px) saturate(1.08);
+}
+
+#work .jrr-stage .project-caption>div {
+    width: 100%;
+    position: relative;
+}
+
+#work .jrr-stage .project-caption>div::before {
+    display: none;
+}
+
+#work .jrr-stage .project-type {
+    display: block;
+    margin-bottom: 5px;
+    color: var(--project-gold);
+    font-size: 9px;
+    line-height: 1.7;
+    letter-spacing: .13em;
+    opacity: .86;
+}
+
+#work .jrr-stage .project-caption h3 {
+    margin: 0 0 5px;
+    color: #f4f0e6;
+    font-size: clamp(19px, 1.9vw, 20px);
+    line-height: 1.16;
+    letter-spacing: -.02em;
+    overflow-wrap: anywhere;
+    max-width: none;
+}
+
+#work .jrr-stage .project-caption p {
+    margin: 0;
+    color: #bcb9af;
+    font-size: 12px;
+    line-height: 1.45;
+    max-width: 62ch;
+}
+
+#work .jrr-stage .project-caption p+p {
+    display: none;
+}
+
+#work .jrr-stage .project-open {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    width: auto;
+    height: auto;
+    border: 1px solid #ddc37466;
+    border-radius: 999px;
+    padding: 8px 12px;
+    background: #ddc37412;
+    color: var(--project-gold);
+    font: inherit;
+    cursor: pointer;
+    justify-self: start;
+    font-size: 11px;
+    letter-spacing: .02em;
+    transition: color .25s ease, gap .25s ease;
+}
+
+#work .jrr-stage .project-open:hover,
+#work .jrr-stage .project-open:focus-visible {
+    gap: 30px;
+    color: #f4f0e6;
+    border-color: #ddc374;
+    background: #ddc37424;
+}
+
+#work .jrr-stage .project-open::before {
+    content: "Explore More";
+    font-size: 13px;
+}
+
+/* JavaScript enables the layered composition. */
+#work .jrr-ready .jrr-stage {
+    display: block;
+    position: relative;
+    perspective: 1500px;
+    overflow: visible;
+    touch-action: pan-y;
+    isolation: isolate;
+}
+
+#work .jrr-ready .jrr-stage>.project-card {
+    position: absolute;
+    top: 52px;
+    left: 50%;
+    width: min(560px, calc(100% - 360px));
+    height: auto;
+    transform-origin: 50% 50%;
+    backface-visibility: hidden;
+    transition:
+        transform 550ms cubic-bezier(.22, .72, .18, 1),
+        opacity 450ms ease,
+        filter 550ms ease;
+}
+
+/* Front panel: clear, flat and readable. */
+#work .jrr-ready .project-card[data-position="0"] {
+    z-index: 3;
+    opacity: 1;
+    filter: none;
+    transform: translate3d(-50%, 0, 0) rotateX(1deg);
+    pointer-events: auto;
+    cursor: pointer;
+    border-color: #ffffff2b;
+}
+
+/* Next project: slightly raised and offset to the right. */
+#work .jrr-ready .project-card[data-position="1"] {
+    z-index: 2;
+    opacity: .82;
+    filter: brightness(.8);
+    border-radius: 30px 30px 12px 12px;
+    transform:
+        translate3d(calc(-50% + 210px), -34px, -65px) rotateX(3deg) rotateZ(5deg) scale(.94);
+    pointer-events: none;
+}
+
+/* Previous project: a quieter second layer. */
+#work .jrr-ready .project-card[data-position="-1"] {
+    z-index: 1;
+    opacity: .58;
+    filter: brightness(.65);
+    border-radius: 34px 34px 12px 12px;
+    transform:
+        translate3d(calc(-50% - 210px), -58px, -130px) rotateX(5deg) rotateZ(-8deg) scale(.88);
+    pointer-events: none;
+}
+
+#work .jrr-ready .project-card[data-position="hidden"] {
+    z-index: 0;
+    opacity: 0;
+    transform:
+        translate3d(calc(-50% + 220px), -48px, -210px) rotateZ(7deg) scale(.88);
+    pointer-events: none;
+}
+
+/* Dot navigation */
+#work .jrr-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 18px;
+    margin-top: 2px;
+}
+
+#work .jrr-controls[hidden] {
+    display: none;
+}
+
+#work .jrr-dots {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2px;
+}
+
+#work .jrr-dot {
+    display: grid;
+    place-items: center;
+    width: 34px;
+    height: 44px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+}
+
+#work .jrr-dot::before {
+    content: "";
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #77786e;
+    transition: transform .3s, background .3s;
+}
+
+#work .jrr-dot[aria-current="true"]::before {
+    background: var(--project-gold);
+    transform: scale(1.5);
+    box-shadow: 0 0 0 5px #ddc37415;
+}
+
+#work .jrr-coverflow button:focus-visible {
+    outline: 2px solid var(--project-gold);
+    outline-offset: 4px;
+}
+
+@media (max-width: 700px) {
+    #work .jrr-stage>.project-card {
+        min-height: 0;
+    }
+
+    #work .jrr-ready .jrr-stage>.project-card {
+        width: calc(100% - 48px);
+    }
+
+    #work .jrr-stage .project-art {
+        min-height: 0;
+        height: auto;
+        aspect-ratio: 3 / 2;
+    }
+
+    #work .jrr-stage .project-art>img {
+        min-height: 0;
+    }
+
+    #work .jrr-stage .project-caption {
+        gap: 16px;
+        padding: 24px;
+        grid-template-columns: 1fr;
+        min-height: 0;
+    }
+
+    #work .jrr-stage .project-caption h3 {
+        max-width: 16ch;
+    }
+
+    #work .jrr-stage .project-overlay {
+        inset: 14px;
+        padding: 15px;
+    }
+
+    #work .jrr-stage .project-caption h3 {
+        font-size: 27px;
+    }
+
+    #work .jrr-ready .project-card[data-position="1"] {
+        transform: translate3d(calc(-50% + 84px), -26px, -40px) rotateZ(3deg) scale(.95);
+    }
+
+    #work .jrr-ready .project-card[data-position="-1"] {
+        transform: translate3d(calc(-50% - 84px), -46px, -80px) rotateZ(-5deg) scale(.9);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    #work .jrr-ready .jrr-stage>.project-card,
+    #work .jrr-dot::before {
+        transition: none;
+    }
+}
+
+html.reduced-motion #work .jrr-ready .jrr-stage>.project-card {
+    transition: none;
+}
+
+/* Compact type and tactile controls across the final responsive layout. */
+h2 {
+    font-size: clamp(32px, 3.5vw, 50px);
+}
+
+.hero h1 {
+    font-size: clamp(48px, 5vw, 76px);
+}
+
+.contact h2 {
+    font-size: clamp(40px, 5vw, 58px);
+}
+
+.eyebrow {
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.button,
+.project-open,
+.jrr-toggle {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+    transition: transform .25s ease, box-shadow .25s ease, background-color .25s ease, border-color .25s ease;
+}
+
+.button::after,
+.project-open::after,
+.jrr-toggle::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: linear-gradient(110deg, transparent 25%, #ffffff38 48%, transparent 70%);
+    transform: translateX(-120%);
+    transition: transform .55s ease;
+}
+
+.button:hover,
+.project-open:hover,
+.jrr-toggle:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 22px #0005, 0 0 0 1px #ddc37435;
+}
+
+.button:hover::after,
+.project-open:hover::after,
+.jrr-toggle:hover::after {
+    transform: translateX(120%);
+}
+
+.button:active,
+.project-open:active,
+.jrr-toggle:active {
+    transform: translateY(0) scale(.98);
+}
+
+.button:focus-visible,
+.project-open:focus-visible,
+.jrr-toggle:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 4px;
+    box-shadow: 0 0 0 5px #ddc37424;
+}
+
+@media (max-width: 780px) {
+    h2 {
+        font-size: clamp(30px, 8vw, 42px);
+    }
+
+    .hero h1 {
+        font-size: clamp(44px, 10vw, 68px);
+    }
+
+    .contact h2 {
+        font-size: clamp(38px, 10vw, 54px);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .button,
+    .button::after,
+    .project-open,
+    .project-open::after,
+    .jrr-toggle,
+    .jrr-toggle::after {
+        transition: none;
+    }
+}
+
+/* Keep the coverflow inside the viewport on smaller screens. */
+@media (max-width: 1100px) {
+    #work .jrr-ready .jrr-stage {
+        overflow-x: hidden;
+        overflow-y: visible;
+    }
+
+    #work .jrr-ready .jrr-stage>.project-card {
+        width: min(560px, calc(100% - 80px));
+    }
+
+    #work .jrr-ready .project-card[data-position="1"] {
+        transform: translate3d(calc(-50% + 120px), -28px, -50px) rotateZ(3deg) scale(.95);
+    }
+
+    #work .jrr-ready .project-card[data-position="-1"] {
+        transform: translate3d(calc(-50% - 120px), -46px, -90px) rotateZ(-5deg) scale(.9);
+    }
+}
+
+@media (max-width: 700px) {
+    #work .jrr-ready .jrr-stage {
+        overflow: hidden;
+    }
+
+    #work .jrr-ready .jrr-stage>.project-card {
+        top: 32px;
+        width: calc(100% - 24px);
+    }
+
+    #work .jrr-stage .project-art {
+        aspect-ratio: 4 / 3;
+    }
+
+    #work .jrr-stage .project-caption {
+        gap: 12px;
+        padding: 16px;
+    }
+
+    #work .jrr-stage .project-caption h3 {
+        font-size: clamp(18px, 6vw, 24px);
+    }
+
+    #work .jrr-stage .project-caption p {
+        font-size: 11px;
+    }
+
+    #work .jrr-ready .project-card[data-position="1"] {
+        transform: translate3d(calc(-50% + 52px), -20px, -35px) rotateZ(2deg) scale(.96);
+    }
+
+    #work .jrr-ready .project-card[data-position="-1"] {
+        transform: translate3d(calc(-50% - 52px), -34px, -65px) rotateZ(-3deg) scale(.92);
     }
 }

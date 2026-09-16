@@ -9,7 +9,7 @@
         content="Sydney-based Full Stack Developer and Application Support professional. Explore Jitha's commercial experience, technical skills and personal projects.">
     <meta name="theme-color" content="#171816">
     <link rel="canonical" href="https://jitharesmi.github.io/">
-    <link rel="icon" href="assets/favicon.svg">
+    <link rel="icon" href="assets/favicon.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -18,13 +18,17 @@
     <link rel="stylesheet" href="assets/site.css">
     <script src="assets/data.js" defer></script>
     <script src="assets/site.js" defer></script>
+    <script src="assets/projects.js" defer></script>
+
 </head>
 
 <body>
     <a href="#main" class="skip">Skip to content</a>
     <div class="reading" aria-hidden="true"></div>
-    <header class="header"><a class="brand" href="#home">Jitha Resmi R</a><button class="menu-toggle"
-            aria-label="Open navigation" aria-expanded="false" aria-controls="navigation">Menu <span
+    <header class="header"><a class="brand" href="#home" aria-label="Jitha Resmi Rema — Home">
+            <img src="assets/jrr-logo.png" alt="JRR signature" class="brand-logo">
+        </a>
+        <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false" aria-controls="navigation"><span
                 aria-hidden="true">☰</span></button>
         <nav id="navigation" aria-label="Main navigation"><a href="#home" class="active">Home</a><a
                 href="#about">About</a><a href="#expertise">Expertise</a><a href="#experience">Experience</a><a
@@ -37,7 +41,7 @@
                 <p class="eyebrow">SYDNEY, AUSTRALIA · AUSTRALIAN PR</p>
                 <p class="hello">Hello, I’m</p>
                 <h1>Jitha Resmi Rema</h1>
-                <p class="role">I work in <span id="typed-role" aria-hidden="true">full stack development</span><span
+                <p class="role">I work in <span id="typed-role" aria-hidden="true">Full Stack Development</span><span
                         class="caret" aria-hidden="true"></span><span class="sr-only">full stack development,
                         application support and CRM integrations.</span></p>
                 <p class="intro">I build web applications and CRM integrations, and support them in production. I bring
@@ -52,8 +56,8 @@
                             <rect x="3" y="5" width="18" height="14" rx="2" />
                             <path d="m3 6 9 7 9-7" />
                         </svg></a></div>
-                <div class="actions"><a class="button" href="cv.html">View my CV <span>↗</span></a><a class="text-link"
-                        href="#work">Explore my projects <span>↓</span></a></div>
+                <div class="actions"><a class="button" href="cv.html">View my CV</a><a class="text-link"
+                        href="#work">Explore my projects </a></div>
             </div>
             <figure class="hero-portrait">
                 <div class="portrait-mount">
@@ -62,8 +66,7 @@
                 </div>
                 <figcaption>DEVELOPMENT · INTEGRATION · SUPPORT</figcaption>
             </figure>
-            <div class="hero-foot"><span>PHP / Laravel / React / AWS</span><a href="#about">Get to know me
-                    <span>↓</span></a></div>
+            <div class="hero-foot"><span>PHP / Laravel / React / AWS</span></div>
         </section>
 
         <section class="about section" id="about">
@@ -72,29 +75,29 @@
                     SYDNEY</span></div>
             <div class="about-copy reveal">
                 <p class="eyebrow">ABOUT ME</p>
-                <h2>About <span>me.</span></h2>
-                <h3>From the first requirement<br>to day-to-day support.</h3>
+                <!-- <h2>About <span>me.</span></h2> -->
+                <h3>From the first requirement to day-to-day support.</h3>
                 <p>My work has involved speaking with business users, building applications, connecting CRMs to other
                     services and keeping those systems running.</p>
                 <p>I’m based in Sydney and looking for a development or application support role where I can contribute
                     that experience and keep learning.</p>
                 <div class="profile-facts">
-                    <div><b>9+ years</b><span>commercial development</span></div>
-                    <div><b>Australian PR</b><span>full working rights</span></div>
-                </div><a class="text-link" href="#experience">Explore my experience <span>↓</span></a>
+                    <div><b>9+ years</b><span>Commercial Development</span></div>
+                    <div><b>Australian PR</b><span>Full Working Rights</span></div>
+                </div><a class="text-link" href="#experience">Explore my experience </a>
             </div>
         </section>
 
         <section class="expertise section" id="expertise">
             <div class="section-heading reveal">
                 <p class="eyebrow">WHAT I WORK WITH</p>
-                <h2>My <span>expertise.</span></h2>
+                <h2>My <span>expertise</span></h2>
             </div>
             <div class="expertise-grid">
                 <article class="expertise-card reveal"><svg class="skill-icon" viewBox="0 0 48 48" aria-hidden="true">
                         <path d="m16 12-12 12 12 12m16-24 12 12-12 12M28 5l-8 38" />
                     </svg>
-                    <h3>Full Stack<br>Development</h3>
+                    <h3>Full Stack Development</h3>
                     <p>Web applications, interfaces and APIs built around the way a business works.</p>
                     <div class="skill-tags"><span>PHP / Laravel</span><span>React</span><span>MySQL</span></div>
                     <details>
@@ -108,7 +111,7 @@
                         <rect x="32" y="16" width="12" height="16" rx="2" />
                         <path d="M16 24h16M24 10v28m-5-23 5-5 5 5m-10 18 5 5 5-5" />
                     </svg>
-                    <h3>Integrations<br>&amp; Automation</h3>
+                    <h3>Integrations & Automation</h3>
                     <p>CRM integrations and automation that reduce repetitive work and keep information in sync.</p>
                     <div class="skill-tags"><span>Bitrix24</span><span>AWS</span><span>Webhooks</span></div>
                     <details>
@@ -121,7 +124,7 @@
                         <rect x="5" y="7" width="38" height="27" rx="3" />
                         <path d="M16 42h16m-8-8v8M11 21h7l4-8 5 15 4-7h6" />
                     </svg>
-                    <h3>Application<br>Support</h3>
+                    <h3>Application Support</h3>
                     <p>Investigating production issues, tracing errors and helping users get back to work.</p>
                     <div class="skill-tags"><span>Linux</span><span>Logs</span><span>SQL</span></div>
                     <details>
@@ -137,12 +140,13 @@
         <section class="experience section" id="experience">
             <div class="experience-heading reveal">
                 <p class="eyebrow">COMMERCIAL EXPERIENCE</p>
-                <h2>My work<br><span>experience.</span></h2>
-                <p>I’ve worked with clients and in-house teams across India and the UAE. Select a role to read more.</p>
+                <h2>My work <span>experience</span></h2>
+                <p>I’ve worked with clients and in-house teams across India and the UAE</p>
             </div>
             <div class="career-list">
                 <details class="career reveal" open>
-                    <summary><span class="career-year">2025—26</span><span class="career-title"><b>Full Stack Developer
+                    <summary><span class="career-year">2025 - 2026</span><span class="career-title"><b>Full Stack
+                                Developer
                                 &amp; IT Lead</b><small>Billionaire Homes Real Estate · Dubai</small></span><span
                             class="expand">+</span></summary>
                     <div class="career-detail">
@@ -158,7 +162,7 @@
                     </div>
                 </details>
                 <details class="career reveal">
-                    <summary><span class="career-year">2022—25</span><span class="career-title"><b>Senior Full Stack
+                    <summary><span class="career-year">2022 - 2025</span><span class="career-title"><b>Senior Full Stack
                                 Developer</b><small>Tilal Properties LLC · Sharjah</small></span><span
                             class="expand">+</span></summary>
                     <div class="career-detail">
@@ -173,7 +177,7 @@
                     </div>
                 </details>
                 <details class="career reveal">
-                    <summary><span class="career-year">2021—22</span><span class="career-title"><b>Full Stack
+                    <summary><span class="career-year">2021 - 2022</span><span class="career-title"><b>Full Stack
                                 Developer</b><small>LuxuryProperty.com · Dubai</small></span><span
                             class="expand">+</span></summary>
                     <div class="career-detail">
@@ -187,7 +191,7 @@
                     </div>
                 </details>
                 <details class="career reveal">
-                    <summary><span class="career-year">2016—21</span><span class="career-title"><b>Web
+                    <summary><span class="career-year">2016 - 2021</span><span class="career-title"><b>Web
                                 Developer</b><small>Hexcore Technologies · Kerala</small></span><span
                             class="expand">+</span></summary>
                     <div class="career-detail">
@@ -206,81 +210,139 @@
 
         <section class="work section" id="work">
             <div class="section-heading reveal">
-                <p class="eyebrow">PERSONAL PROJECTS</p>
+                <p class="eyebrow">CLIENT WORK &amp; PERSONAL PROJECTS</p>
                 <h2>Selected <span>projects.</span></h2>
-                <p>Projects I’m working on to explore recruitment, support and order management.</p>
+                <p>
+                    Projects spanning business websites, e-commerce administration,
+                    recruitment tools and IT support workflows.
+                </p>
             </div>
-            <div class="project-grid">
-                <article class="project-card reveal">
-                    <div class="project-art commerce-art" aria-label="Illustrative Commerce Desk order workflow">
-                        <div class="mini-window">
-                            <div class="mini-top"><b>Commerce Desk</b><span>Orders</span></div>
-                            <div class="mini-total"><small>EXAMPLE
-                                    ORDER</small><strong>#1042</strong><span>$248.00</span></div>
-                            <div class="mini-row"><span>Desk lamp × 2</span><span>$158.00</span></div>
-                            <div class="mini-row"><span>Desk organiser × 1</span><span>$90.00</span></div>
-                            <div class="mini-flow">Placed <i>→</i> Paid <i>→</i> Fulfilled</div>
-                        </div><span class="art-caption">Interface concept · sample data</span>
-                        <div class="project-overlay">
-                            <p>Inventory, orders and reviewed AI product descriptions.</p><button data-case="commerce"
-                                aria-label="Explore Commerce Desk">Explore project ↗</button>
+
+            <div class="jrr-coverflow" role="region" aria-roledescription="carousel" aria-label="Selected projects">
+
+                <div class="jrr-stage" id="jrr-stage">
+
+                    <article class="project-card" role="group" aria-roledescription="slide"
+                        aria-label="1 of 5 — Gas Instrumentation and Controls">
+
+                        <div class="project-art calibration-art">
+                            <img src="assets/calibration-website.jpg"
+                                alt="Gas Instrumentation and Controls website homepage" loading="lazy" width="1200"
+                                height="800">
+
                         </div>
-                    </div>
-                    <div class="project-caption">
-                        <div><span class="project-type">LARAVEL / REACT / MYSQL</span>
-                            <h3>Commerce Desk</h3>
-                            <p>Portfolio implementation · simulated payments</p>
-                        </div><button class="project-open" data-case="commerce"
-                            aria-label="Open Commerce Desk details">↗</button>
-                    </div>
-                </article>
-                <article class="project-card reveal">
-                    <div class="project-art support-art">
-                        <div class="mini-window">
-                            <div class="mini-top"><b>ResolveAI</b><span>#TKT-208</span></div>
-                            <div class="ticket-question">I can’t sign in<br>to the CRM.</div>
-                            <div class="draft"><small>AI RESPONSE DRAFT</small>
-                                <p>Are you seeing an error message after signing in?</p><span>Agent review
-                                    required</span>
+
+                        <div class="project-caption">
+                            <div>
+                                <span class="project-type">CLIENT WEBSITE</span>
+                                <h3>Gas Instrumentation &amp; Controls</h3>
+                                <p>Calibration services and equipment enquiries.</p>
                             </div>
-                        </div><span class="art-caption">Interface concept · sample ticket</span>
-                        <div class="project-overlay">
-                            <p>Ticket summaries and response suggestions with agent review.</p><button
-                                data-case="helpdesk" aria-label="Explore ResolveAI">Explore project ↗</button>
+                            <button type="button" class="project-open" data-case="calibration"
+                                aria-label="Open Gas Instrumentation and Controls project details">
+
+                            </button>
                         </div>
-                    </div>
-                    <div class="project-caption">
-                        <div><span class="project-type">LARAVEL / REACT / AI</span>
-                            <h3>ResolveAI</h3>
-                            <p>In development · human-reviewed drafts</p>
-                        </div><button class="project-open" data-case="helpdesk"
-                            aria-label="Open ResolveAI details">↗</button>
-                    </div>
-                </article>
-                <article class="project-card reveal">
-                    <div class="project-art talent-art">
-                        <div class="mini-window">
-                            <div class="mini-top"><b>Talent Evidence</b><span>Review</span></div>
-                            <div class="ticket-question">Criteria.<br>Evidence. Review.</div>
-                            <div class="mini-row"><span>REST APIs</span><span>Evidence found</span></div>
-                            <div class="mini-row"><span>Production support</span><span>Ask for an example</span></div>
-                            <div class="review-note">Recruiter decision: pending</div>
-                        </div><span class="art-caption">Interface concept · sample review</span>
-                        <div class="project-overlay">
-                            <p>Connect vacancy criteria with résumé evidence and human decisions.</p><button
-                                data-case="talent" aria-label="Explore Talent Evidence">Explore project ↗</button>
+                    </article>
+
+                    <article class="project-card" role="group" aria-roledescription="slide"
+                        aria-label="2 of 5 — Commerce Desk">
+
+                        <div class="project-art calibration-art">
+                            <img src="assets/commerce-preview.png" alt="Commerce Desk dashboard design concept"
+                                loading="lazy" width="1536" height="1024">
+
                         </div>
-                    </div>
-                    <div class="project-caption">
-                        <div><span class="project-type">LARAVEL / REACT / DOCUMENTS</span>
-                            <h3>Talent Evidence</h3>
-                            <p>Prototype · evidence-based review</p>
-                        </div><button class="project-open" data-case="talent"
-                            aria-label="Open Talent Evidence details">↗</button>
-                    </div>
-                </article>
+
+                        <div class="project-caption">
+                            <div>
+                                <span class="project-type">LARAVEL / REACT / MYSQL</span>
+                                <h3>E-Commerce Operations Dashboard</h3>
+                                <p>Inventory, orders and reviewed AI product content.</p>
+                            </div>
+                            <button type="button" class="project-open" data-case="commerce"
+                                aria-label="Open E-Commerce Operations Dashboard project details">
+
+                            </button>
+                        </div>
+                    </article>
+                    <article class="project-card" role="group" aria-roledescription="slide"
+                        aria-label="5 of 5 — Billionaire Homes Real Estate">
+
+                        <div class="project-art support-art">
+                            <img src="assets/bh.png" alt="Billionaire Homes Real Estate website" loading="lazy"
+                                width="1536" height="1024">
+
+                        </div>
+
+                        <div class="project-caption">
+                            <div>
+                                <span class="project-type">PHP / HTML / MYSQL</span>
+                                <h3>Billionaire Homes Real Estate</h3>
+                                <p>Luxury property listings and management.</p>
+                            </div>
+                            <button type="button" class="project-open" data-case="billionaire"
+                                aria-label="Open Billionaire Homes Real Estate project details">
+
+                            </button>
+                        </div>
+                    </article>
+                    <article class="project-card" role="group" aria-roledescription="slide"
+                        aria-label="3 of 5 — Talent Evidence">
+
+                        <div class="project-art calibration-art">
+                            <img src="assets/recruitment-preview.png"
+                                alt="Talent Evidence design concept for reviewing résumé evidence against vacancy criteria"
+                                loading="lazy" width="1536" height="1024">
+
+                        </div>
+
+                        <div class="project-caption">
+                            <div>
+                                <span class="project-type">
+                                    LARAVEL / REACT / DOCUMENTS
+                                </span>
+                                <h3>AI Recruitment</h3>
+                                <p>Résumé evidence organised for recruiter review.</p>
+                            </div>
+                            <button type="button" class="project-open" data-case="talent"
+                                aria-label="Open Talent Evidence project details">
+
+                            </button>
+                        </div>
+                    </article>
+
+                    <article class="project-card" role="group" aria-roledescription="slide"
+                        aria-label="4 of 5 — ResolveAI">
+
+                        <div class="project-art support-art">
+                            <img src="assets/helpdesk-preview.png"
+                                alt="ResolveAI help desk interface showing a ticket and an AI response draft"
+                                loading="lazy" width="1536" height="1024">
+
+                        </div>
+
+                        <div class="project-caption">
+                            <div>
+                                <span class="project-type">LARAVEL / REACT / AI</span>
+                                <h3>AI Help Desk Assistant</h3>
+                                <p>AI-assisted ticket summaries and response drafts.</p>
+                            </div>
+                            <button type="button" class="project-open" data-case="helpdesk"
+                                aria-label="Open AI Help Desk Assistant project details">
+
+                            </button>
+                        </div>
+                    </article>
+
+
+
+                </div>
+
+                <div class="jrr-controls" hidden>
+                    <div class="jrr-dots" role="group" aria-label="Choose a project"></div>
+                </div>
             </div>
-            <p class="work-note">Open a project for its technical details and current progress.</p>
         </section>
 
         <section class="education section">
@@ -300,11 +362,11 @@
             <p class="eyebrow">GET IN TOUCH</p>
             <h2>Let’s <span>talk.</span></h2>
             <p>If you’re hiring for a development or application support role in Sydney, I’d be happy to hear from you.
-            </p><a class="contact-email" href="mailto:jitharesmir@gmail.com">jitharesmir@gmail.com <span>↗</span></a>
+            </p><a class="contact-email" href="mailto:jitharesmir@gmail.com">jitharesmir@gmail.com <span></span></a>
             <div class="contact-links"><a href="tel:+61422376566">+61 422 376 566</a><a
                     href="https://www.linkedin.com/in/jitharesmir" target="_blank" rel="noopener noreferrer">LinkedIn
-                    ↗</a><a href="https://github.com/JITHARESMI" target="_blank" rel="noopener noreferrer">GitHub
-                    ↗</a><a href="cv.html">View CV ↗</a></div>
+                </a><a href="https://github.com/JITHARESMI" target="_blank" rel="noopener noreferrer">GitHub
+                </a><a href="cv.html">View CV </a></div>
         </section>
     </main>
     <footer><span>© 2026 Jitha Resmi Rema</span><a href="#home" aria-label="Back to top">↑</a></footer>
@@ -313,17 +375,9 @@
         <p id="dialog-category" class="eyebrow"></p>
         <h2 id="dialog-title"></h2>
         <p id="dialog-intro"></p>
-        <div class="dialog-columns">
-            <div>
-                <h3>Engineering focus</h3>
-                <ul id="dialog-points"></ul>
-            </div>
-            <div>
-                <h3>Current status</h3>
-                <p id="dialog-status"></p>
-            </div>
-        </div><a id="dialog-link" class="button" href="https://github.com/JITHARESMI" target="_blank"
-            rel="noopener noreferrer">View on GitHub ↗</a>
+        <p id="dialog-status" class="dialog-status"></p>
+        <a id="dialog-link" class="button" href="https://github.com/JITHARESMI" target="_blank"
+            rel="noopener noreferrer">View on GitHub </a>
     </dialog>
     <noscript>
         <p class="no-script">Project pop-ups require JavaScript. Career details and the <a href="cv.html">full CV</a>
